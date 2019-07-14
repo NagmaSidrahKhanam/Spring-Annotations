@@ -4,14 +4,15 @@ import org.springframework.beans.factory.annotation.Value;
 
 public class Actor {
 
-    @Value("Nagma")
     private String name;
-
-    @Value("female")
     private String gender;
-
-    @Value("28")
     private int age;
+
+    public Actor(String name, String gender, int age) {
+        this.name = name;
+        this.gender = gender;
+        this.age = age;
+    }
 
     public String getName() {
         return name;

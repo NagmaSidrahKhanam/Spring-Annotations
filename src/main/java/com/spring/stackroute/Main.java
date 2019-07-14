@@ -16,22 +16,33 @@ The Main class looks up Movie bean via three ways to print out actor information
 Create a spring-xml-demo repo and push the code to master branch.
  */
 
-import org.springframework.beans.factory.BeanFactory;
+
+import com.spring.stackroute.domain.Movie;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.spring.stackroute.domain.Movie;
 
 public class Main {
     public static void main( String[] args )
     {
         ApplicationContext context = new AnnotationConfigApplicationContext("com.spring.stackroute.domain");
-        Movie movie1 = context.getBean("movieBean",Movie.class);
+
+        Movie movie1 = context.getBean("movieObj1",Movie.class);
         movie1.display();
 
-        BeanFactory factory = new AnnotationConfigApplicationContext("com.spring.stackroute.domain");
-        Movie movie2 = factory.getBean("movieBean",Movie.class);
+        Movie movie2 = context.getBean("movieObj2",Movie.class);
         movie2.display();
+
+        Movie movie3 = context.getBean("movieObj3",Movie.class);
+        movie3.display();
+
+        Movie movie4 = context.getBean("movieObj3",Movie.class);
+
+        System.out.println(movie3 == movie4);
+
+        Movie movie5 = (Movie) context.getBean("movieObject");
+        movie5.display();
     }
 
 }
