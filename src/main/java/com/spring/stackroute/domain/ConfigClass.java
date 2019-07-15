@@ -2,10 +2,9 @@ package com.spring.stackroute.domain;
 
 
 
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
+
 
 @Configuration
 public class ConfigClass {
@@ -14,17 +13,22 @@ public class ConfigClass {
 
     @Bean
     public Movie movieObj (){
-        return new Movie();
+        return new Movie(actor());
+    }
+
+    @Bean
+    public Movie movieObj1 (){
+        return new Movie(actorObj());
     }
 
     @Bean
     public Actor actorObj (){
-        return new Actor("Mahesh","male",39);
+        return new Actor("SRK","male",39);
     }
 
     @Bean
     public Actor actor (){
-        return new Actor("RK","male",30);
+        return new Actor("Salman khan","male",30);
     }
 
 }
