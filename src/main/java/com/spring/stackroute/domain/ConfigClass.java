@@ -1,10 +1,6 @@
 package com.spring.stackroute.domain;
-
-
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
 
 @Configuration
 public class ConfigClass {
@@ -18,13 +14,12 @@ public class ConfigClass {
 
     @Bean
     public Actor actorObj (){
-        return new Actor("SRK","male",50);
+        return new Actor("SRK","male",40);
     }
 
-    @Bean(initMethod = "customInit", destroyMethod = "customDestroy")
-
-    public BeanLifecycleDemoBean beanLifeCycle() {
-        return new BeanLifecycleDemoBean();
+    @Bean
+    public BeanPostProcessorDemoBean beanPostProcessorDemo(){
+        return new BeanPostProcessorDemoBean();
     }
 
 }
