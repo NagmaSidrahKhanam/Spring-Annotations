@@ -5,10 +5,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 
-
+//configuration class
 @Configuration
 public class ConfigClass {
-
+//creating bean
     @Bean
     public Movie movieBean (){
         Movie movie = new Movie();
@@ -17,7 +17,8 @@ public class ConfigClass {
     }
 
     @Bean
-    public Actor actorBean (){
+    public Actor actorBean ()
+    {
         return new Actor();
     }
 

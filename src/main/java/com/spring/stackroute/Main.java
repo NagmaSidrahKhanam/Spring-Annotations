@@ -25,10 +25,11 @@ import com.spring.stackroute.domain.Movie;
 public class Main {
     public static void main( String[] args )
     {
+        //creating application context object
         ApplicationContext context = new AnnotationConfigApplicationContext("com.spring.stackroute.domain");
         Movie movie1 = context.getBean("movieBean",Movie.class);
         movie1.display();
-
+        //using bean factory object
         BeanFactory factory = new AnnotationConfigApplicationContext("com.spring.stackroute.domain");
         Movie movie2 = factory.getBean("movieBean",Movie.class);
         movie2.display();
